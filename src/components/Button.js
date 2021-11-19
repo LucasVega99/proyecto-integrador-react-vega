@@ -1,7 +1,7 @@
 import './Button.css'
-const Button = ({label}) => {
+const Button = ({label, children}) => {
     return (
-        <button className='button'>{label}</button>
+        <button className='button'>{label}{children}</button>
         )
 }
 

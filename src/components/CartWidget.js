@@ -1,5 +1,10 @@
+import { ShoppingCartOutlined } from '@ant-design/icons';
+import Button from './Button';
+
 const CartWidget = () => {
     return (
-        <span className="material-icons-outlined">shopping_cart</span>
+       <Button><ShoppingCartOutlined style={{ fontSize: '3rem', padding: '1rem' }}/></Button> 
     )
-}
+};
+
+export default CartWidget;
