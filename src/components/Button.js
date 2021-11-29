@@ -5,4 +5,4 @@ const Button = ({label, children}) => {
         )
 }
 
-export default Button
+export default Button;
