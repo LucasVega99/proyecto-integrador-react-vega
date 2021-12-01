@@ -1,6 +1,6 @@
 import './NavBar.css';
-import Button from './Button';
-import CartWidget from './CartWidget';
+import Button from '../Button/Button';
+import CartWidget from '../Cart Widget/CartWidget'
 
 const NavBar = () => {
     return (

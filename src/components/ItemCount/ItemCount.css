@@ -1,0 +1,8 @@
+.sumarItemCarrito {
+    display: flex;
+    flex-direction: column;   
+}
+
+/* .boton-stock {
+    width: 3rem;
+} */

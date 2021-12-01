@@ -1,5 +1,5 @@
 import { ShoppingCartOutlined } from '@ant-design/icons';
-import Button from './Button';
+import Button from '../Button/Button';
 
 const CartWidget = () => {
     return (
