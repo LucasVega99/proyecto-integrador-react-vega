@@ -27,7 +27,16 @@ const productos = [
 
 export const obtenerProductos = () => {
     return new Promise((resolve, reject) => {
-        
+
         setTimeout(()=> resolve(productos), 2000)
+
+    })
+}
+
+export const obtenerItem = () => {
+    return new Promise((resolve, reject) => {
+        
+        setTimeout(()=> resolve(productos.slice(1, 2)), 2000)
+
     })
 }

@@ -14,8 +14,9 @@ const ItemListContainer = ({children}) => {
     }, [])
     return (
         <div>
-            <ItemList items={listaProductos}/>
             {children}
+            <ItemList items={listaProductos}/>
+            
             <ItemCount nombreProducto='Adidas Superstar' stock={25} />
             <ItemCount nombreProducto='Adidas Supernova' stock={15}/>
             <ItemCount nombreProducto='Nike Air Max 270' stock={25}/>
