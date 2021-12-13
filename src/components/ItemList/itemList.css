@@ -1,0 +1,16 @@
+.products-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    flex-direction: row;
+}
+
+.picture-item {
+    width: 20%;
+    border: 1px solid rgba(174, 179, 178, 0.48);
+    border-radius: 5px 5px 10px 5px;
+}
+.picture-item .img-container img {
+    width: 100%;
+    max-height: 25rem;
+}

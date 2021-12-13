@@ -1,10 +1,8 @@
 import React, {useState} from 'react';
-import Button from '../Button/Button'
-import './ItemCount.css'
-
+import './ItemCount.css';
 
 // detalle de los items 
-const ItemCount = ({nombreProducto, stock}) => {
+const ItemCount = ({stock}) => {
 
     const [contador, setContador] = useState (1);
 
@@ -21,11 +19,11 @@ const ItemCount = ({nombreProducto, stock}) => {
 
     return(
         <div className='sumarItemCarrito'>
-            <h3>{nombreProducto}</h3>
-            <button className='boton-stock' onClick={restarCarrito}>-</button>
-            <div>{contador}</div>
-            <button className='boton-stock' onClick={sumarCarrito}>+</button>
-            <Button label='Agregar al carrito'/>
+            <div className='contador'>            
+                <button className='boton-stock' onClick={restarCarrito}>-</button>
+                <div>{contador}</div>
+                <button className='boton-stock' onClick={sumarCarrito}>+</button>
+            </div>
         </div>
     )
 }

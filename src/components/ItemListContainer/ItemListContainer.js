@@ -1,10 +1,12 @@
 import { useState, useEffect } from 'react';
-import ItemCount from '../ItemCount/ItemCount';
 import ItemList from '../ItemList/ItemList';
 import { obtenerProductos } from '../../Functions/Item';
+import { obtenerCategorias } from '../../Functions/Item';
+import { useParams } from 'react-router-dom/cjs/react-router-dom.min';
 
 const ItemListContainer = ({children}) => {
     const [listaProductos, setListaProductos] = useState([])
+    const {idCategoria} = useParams()
     useEffect(() => {
         const lista = obtenerProductos()
 
@@ -13,14 +15,9 @@ const ItemListContainer = ({children}) => {
         })
     }, [])
     return (
-        <div>
+        <div >
             {children}
             <ItemList items={listaProductos}/>
-            
-            <ItemCount nombreProducto='Adidas Superstar' stock={25} />
-            <ItemCount nombreProducto='Adidas Supernova' stock={15}/>
-            <ItemCount nombreProducto='Nike Air Max 270' stock={25}/>
-            <ItemCount nombreProducto='Nike Zoom Gravity' stock={5}/>
         </div>
     )
 }

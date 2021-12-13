@@ -1,15 +1,19 @@
-import Button from '../Button/Button'
+import './itemList.css';
+import ItemCount from '../ItemCount/ItemCount';
+import { Link } from 'react-router-dom';
+import Button from '../Button/Button';
 
 const ItemList = ({items}) => {
 
     return (
-        <div>
+        <div className='products-container'>
             {items.map( p =>
                 <picture className='picture-item'>
                     <div><h3 key={p.id}>{p.nombre}</h3></div>
-                    <img src={p.imagen} />
+                    <div className='img-container'><img src={p.imagen} /></div>
                     <div><p>{p.precio}</p></div>
-                    <Button label='Ver detalle del producto' />
+                    <ItemCount />
+                    <Link to={`/detail/${p.id}`}><Button>Ver detalle</Button></Link>
                 </picture>)}
         </div>
     )

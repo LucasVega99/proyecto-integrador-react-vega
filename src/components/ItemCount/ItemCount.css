@@ -1,8 +1,20 @@
 .sumarItemCarrito {
-    display: flex;
-    flex-direction: column;   
-}
 
-/* .boton-stock {
+}
+.contador {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+ .boton-stock {
     width: 3rem;
-} */
+    max-height: 3rem;
+    border: 1px solid rgba(174, 179, 178, 0.48);
+    border-radius: 5px 5px 5px 5px;
+    margin: 0 1rem;
+} 
+.boton-stock:hover {
+    cursor: pointer;
+    background-color: #a0e6f8;
+    color: #4973ce;
+}
