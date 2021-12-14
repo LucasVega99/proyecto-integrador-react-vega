@@ -1,4 +1,5 @@
 import Button from '../Button/Button'
+import ItemCount from '../ItemCount/ItemCount'
 
 const ItemDetail = ({item}) => {
     return (
@@ -11,6 +12,7 @@ const ItemDetail = ({item}) => {
                         <p>{o.descripcion}</p>
                     </div>
                     <div><p>{o.precio}</p></div>
+                    <ItemCount />
                     <Button label='Comprar' />
                 </div>)}
         </div>

@@ -11,8 +11,8 @@ function App() {
       <BrowserRouter>
         <NavBar />
         <Switch>
-          <Route exact path='/' element={<ItemListContainer />} />
-          <Route path='categoria/:idCategoria' element={<ItemListContainer></ItemListContainer>}></Route>
+          <Route exact path='/' element={<ItemListContainer />}/>
+          <Route path='categoria/:idCategoria' element={<ItemListContainer />}/> 
           <Route path='/detail/:paramId' element={<ItemDetailContainer />} />
         </Switch>
       </BrowserRouter>
