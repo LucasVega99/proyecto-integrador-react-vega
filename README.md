@@ -1,70 +1,22 @@
-# Getting Started with Create React App
+# App.js
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+En primer lugar, nos encontramos con el archivo App.js que es el núcleo desde donde se estructura el resto de la aplicación. Aquí se colocan todos los componentes a renderizar que necesitemos.
 
-## Available Scripts
+# React Router
 
-In the project directory, you can run:
+Mediante React Router -una librería de React-, navegaremos a través de la aplicación de manera sencilla y dinámica.
+Utilizando las etiquetas <Route> dentro de la etiqueta <Switch> (la que se encargará de indicarnos que componentes se montaran y desmontaran, a diferencia de los que están fuera de esta, los cuales siempre se renderizaran en pantalla, como en este caso el NavBar) nos dirigiremos a las diferentes secciónes de nuestra app. A su vez contenidos por la etiqueta <BrowserRouter>, quien inyecta propiedades a nuestro componente para poder acceder al historial de navegación, realizar redirecciones, entre otras funciones.
 
-### `npm start`
+# Item.js 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Aqui deposité dos array de objetos: la base de datos y las categorías. Además de las funciones obtenerCategorias(), obtenerProductos() y obtenerItemPorId(), que se encargan de renderizar en pantalla los datos que se encuentran en esos arrays. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+En primer lugar, tenemos obtenerCategorias(), que renderiza en el NavBar.js. 
+Esta función se encarga de mostrar en pantalla las dos categorías existentes: Nike y Adidas a partir de una Promise resuelta en un segundo, devolviendo ese mismo array. 
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Nav Bar
 
-### `npm run build`
+En el se encuentra el logo de la página que retornará al renderizado del componente ItemListContainer.js y el botón que dirige hacia el carrito de compras mediante otro componente CartWidget.js, todavía no creado.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Aqui llamé a la función obtenerCategorias().  
