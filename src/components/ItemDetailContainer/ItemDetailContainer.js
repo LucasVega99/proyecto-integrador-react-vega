@@ -6,12 +6,10 @@ import { useParams } from 'react-router-dom';
 const ItemDetailContainer = () => {
     const [detalleProducto, setDetalleProducto] = useState([]);
     const { paramId } = useParams();
-    console.log(detalleProducto)
     
     useEffect(() => {
         obtenerItemPorId(paramId).then(item => {
             setDetalleProducto(item)
-            console.log(item)
         }).catch(err => {
             console.log(err)
         })

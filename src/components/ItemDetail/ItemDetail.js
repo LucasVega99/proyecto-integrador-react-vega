@@ -1,7 +1,13 @@
 import Button from '../Button/Button'
-import ItemCount from '../ItemCount/ItemCount'
+import { ButtonCount, InputCount } from '../../Functions/Contadores/ItemCount'
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
-const ItemDetail = ({item}) => {
+const ItemDetail = ({item, inputType = 'input'}) => {
+    const ItemCount = inputType === 'input' ? InputCount : ButtonCount
+
+    const [count, setCount] = useState(0)
+
     return (
         <div>
             {[item].map( o =>
@@ -12,8 +18,11 @@ const ItemDetail = ({item}) => {
                         <p>{o.descripcion}</p>
                     </div>
                     <div><p>{o.precio}</p></div>
-                    <ItemCount />
-                    <Button label='Comprar' />
+                    <ItemCount onConfirm={agregarAlCarrito} stock={o.stock} />
+                    <div>
+                        <Link to={'/cart'}><Button label='Comprar'/></Link>
+                    </div>
+                    
                 </div>)}
         </div>
     )
