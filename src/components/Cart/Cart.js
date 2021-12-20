@@ -17,10 +17,9 @@ const Cart = () => {
             <div key={producto.id} className="prod-detail">
                 <div>{producto.name}</div>
                 <div>
-                    <button onClick={() => removeItem(producto)}>-</button>
-                    <button onClick={() => addItem(producto)}>+</button>
+                <img className='imagen-item' src={producto.imagen} alt='product-img'/>
                 </div>
-                <div>{producto.cantidad} x ${producto.precio}</div>
+                <div>{producto.cantidad} x {producto.precio}</div>
             </div>
         ))}
     </>

@@ -29,7 +29,6 @@ const ItemDetail = ({item}) => {
         const datoProd = {...item, cantidad: contador}
         console.log(item)
         addItem(datoProd)
-        console.log('Producto agregado al carrito')
         history.push('/cart')
     } 
     
@@ -49,7 +48,7 @@ const ItemDetail = ({item}) => {
                     <p>{contador}</p>
                     <div>
                         {contador !== 0 && (
-                        <Link to={'/cart'}><Button onClick={addProdCarrito}>Agregar Al carrito</Button></Link>)}
+                        <Link to={'/cart'}><button onClick={addProdCarrito}>Agregar Al carrito</button></Link>)}
                     </div>
                 </div>)}
         </div>
