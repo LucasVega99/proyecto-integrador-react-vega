@@ -2,7 +2,7 @@ const productos = [
     {
         id: 1,
         nombre: 'Nike Air Max 270',
-        precio: '$120',
+        precio: '120',
         imagen: '/imgs/nike-airforce-270.jpg',
         stock: '38',
         categoria: 'nike',
@@ -11,7 +11,7 @@ const productos = [
     {
         id: 2,
         nombre: 'Nike Zoom Gravity',
-        precio: '$60',
+        precio: '60',
         imagen: '/imgs/Nike-Zoom-Gravity-White.webp',
         stock: '25',
         categoria: 'nike',
@@ -20,7 +20,7 @@ const productos = [
     {
         id: 3,
         nombre: 'Adidas Superstar',
-        precio: '$100',
+        precio: '100',
         imagen: '/imgs/Zapatillas_Superstar_Blanco.jpg',
         stock: '10',
         categoria: 'adidas',
@@ -29,7 +29,7 @@ const productos = [
     {
         id: 4,
         nombre: 'Adidas Supernova M',
-        precio: '$110',
+        precio: '110',
         imagen: '/imgs/adidas=supernova.jpg',
         stock: '14',
         categoria: 'adidas',

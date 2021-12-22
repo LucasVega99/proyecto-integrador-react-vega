@@ -11,7 +11,7 @@ const ItemList = ({items = []}) => {
                 <picture key={p.id} className='picture-item' >
                     <div><h3 >{p.nombre}</h3></div>
                     <div className='img-container'><img src={p.imagen} alt='img-product'/></div>
-                    <div><p>{p.precio}</p></div> 
+                    <div><p>${p.precio}</p></div> 
                     <Link to={`/detail/${p.id}`}><Button>Ver detalle</Button></Link>
                 </picture>)}
         </div>

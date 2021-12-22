@@ -1,29 +1,42 @@
 import { Link } from "react-router-dom"
 import { UseCart } from '../../Functions/Context/CartContext'
+import './cart.css'
 
 const Cart = () => {
-    const { cart, addItem, removeItem } = UseCart();
-    console.log(cart)
+const { cart, removeItem, clearCart, priceItem } = UseCart();
+
+ const deleteItem = (id) => {
+    removeItem(id)
+ }
+
+if (cart.length === 0) {
+    return (
+    <div>
+        <h1>El carrito esta vacío </h1>
+        <div>
+            <Link to={'/'} ><button className="button">Volver al inicio</button></Link>
+        </div>
+    </div>)} else {
     return(
     <>
-        <h2>Cart</h2>
-            {cart === 0 ? <div>
-                El carrito esta vacío 
-                <div>
-                    <Link to={'/'}>Volver al inicio</Link>
-                </div>
-            </div> :
-            cart.map((producto) => (
+        <div><h2>Carrito de compras</h2></div> 
+        <div className="cart-container">
+            {cart.map((producto) => (
             <div key={producto.id} className="prod-detail">
-                <div>{producto.name}</div>
+                <button className='btn-remove-item' onClick={() => deleteItem(producto.id)}>x</button>
                 <div>
-                <img className='imagen-item' src={producto.imagen} alt='product-img'/>
+                <div className='img-cart-container'><img src={producto.imagen} alt='img-product'/></div>
                 </div>
-                <div>{producto.cantidad} x {producto.precio}</div>
+                <div>{producto.nombre}</div>
+                <div>{producto.cantidad} x ${producto.precio}</div>
+                <div> {`Total: $${(producto.cantidad * producto.precio).toFixed(2)}`} </div>
             </div>
         ))}
+        <h1>{`Total de productos: $${priceItem().toFixed(2)} `}</h1>
+        <button className="btn-remove-cart" onClick={clearCart}> Eliminar todo</button>
+        </div>
     </>
-    )
+    )}
 }
 
 export default Cart

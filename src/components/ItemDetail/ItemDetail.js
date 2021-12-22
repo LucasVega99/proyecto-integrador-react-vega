@@ -1,8 +1,8 @@
-import Button from '../Button/Button'
 import ItemCount from '../Item Count/ItemCount'
 import { Link, useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import { UseCart } from '../../Functions/Context/CartContext';
+import './itemDetail.css'
 
 const ItemDetail = ({item}) => {
     const [contador, setContador] = useState (0)
@@ -10,7 +10,7 @@ const ItemDetail = ({item}) => {
     const history = useHistory()
 
     const { addItem } = UseCart()
-
+    
     const sumarCarrito = () => {
         if (contador < item.stock) {
             const valor = contador + 1
@@ -27,11 +27,12 @@ const ItemDetail = ({item}) => {
 
     const addProdCarrito = () => {
         const datoProd = {...item, cantidad: contador}
-        console.log(item)
+
         addItem(datoProd)
+
         history.push('/cart')
     } 
-    
+
     return (
         <div>
             {[item].map( o =>
@@ -43,12 +44,12 @@ const ItemDetail = ({item}) => {
                     <div>
                         <p>{o.descripcion}</p>
                     </div>
-                    <div><p>{o.precio}</p></div>
+                    <div><p>${o.precio}</p></div>
                     <ItemCount restarCarrito={restarCarrito} sumarCarrito={sumarCarrito}/>
                     <p>{contador}</p>
                     <div>
                         {contador !== 0 && (
-                        <Link to={'/cart'}><button onClick={addProdCarrito}>Agregar Al carrito</button></Link>)}
+                        <button className='button' onClick={addProdCarrito}>Agregar Al carrito</button>)}
                     </div>
                 </div>)}
         </div>

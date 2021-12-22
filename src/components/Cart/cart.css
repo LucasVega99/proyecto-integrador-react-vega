@@ -1,0 +1,27 @@
+.cart-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 95%;
+}
+
+.prod-detail {
+    width: 50%;
+    max-height: 20rem;
+    border: 1px solid #95dbd1;
+    border-radius: 5px;
+    background-color: rgb(244, 248, 248);
+    display: flex;
+    flex-direction: row;
+}
+
+.img-cart-container img {
+    width: 35%;
+}
+.btn-remove-item {
+    width: 2rem;
+}
+.btn-remove-cart {
+    width: 8rem;
+}
