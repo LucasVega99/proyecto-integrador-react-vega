@@ -1,16 +1,21 @@
 import './NavBar.css';
 import CartWidget from '../Cart Widget/CartWidget';
 import { Link } from 'react-router-dom';
-import { obtenerCategorias } from '../../Functions/Item';
 import { useState, useEffect } from 'react';
 import Button from '../Button/Button';
-
+import { database } from '../../services/firebase'
+import { getDocs, collection } from 'firebase/firestore'
+ 
 const NavBar = () => {
-    const [categorias, setCategorias] = useState([])
+    const [categories, setCategories] = useState([])
 
     useEffect (() => {
-        obtenerCategorias().then(categorias => {
-            setCategorias(categorias)
+        getDocs(collection(database, 'categories')).then((querySnapshot) => {
+            const categories = querySnapshot.docs.map( doc => {
+                return {id: doc.id, ...doc.data()}
+            })
+            console.log(categories)
+            setCategories(categories)
         })
     }, [])
     return (
@@ -18,7 +23,9 @@ const NavBar = () => {
             <div className="logo">
             <Link to={'/'}><h2>Flexbox Footwear</h2></Link>
             </div>
-            <div>{categorias.map(categ => <Link key={categ.id} to={`/categoria/${categ.id}`}><Button>{categ.descripcion}</Button></Link>)}</div>
+            <div>
+                {categories.map(categ => <Link key={categ.id} to={`/categoria/${categ.id}`}><Button>{categ.descripcion}</Button></Link>)}
+            </div>
             <Link to={'/cart'}><CartWidget /></Link>
         </nav>
     )

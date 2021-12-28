@@ -1,5 +1,5 @@
 import ItemCount from '../Item Count/ItemCount'
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useState } from 'react';
 import { UseCart } from '../../Functions/Context/CartContext';
 import './itemDetail.css'

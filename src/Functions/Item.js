@@ -38,8 +38,8 @@ const productos = [
 ];
 
 const categorias = [
-    {id:'adidas', descripcion:'Adidas'},
-    {id:'nike', descripcion:'Nike'},
+    {id:'adidas', description:'Adidas'},
+    {id:'nike', description:'Nike'},
 ]
 
 export const obtenerCategorias = () => {
