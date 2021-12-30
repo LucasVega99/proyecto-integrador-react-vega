@@ -22,6 +22,7 @@
 .btn-remove-item {
     width: 2rem;
 }
-.btn-remove-cart {
-    width: 8rem;
+.btn-cart {
+    margin: 1rem auto;
+    width: 20rem;
 }

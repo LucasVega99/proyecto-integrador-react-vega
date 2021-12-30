@@ -4,6 +4,7 @@
 react-proyecto-final/node_modules
 /.pnp
 .pnp.js
+.env
 
 # testing
 /coverage

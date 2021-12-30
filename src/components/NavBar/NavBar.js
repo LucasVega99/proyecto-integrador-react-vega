@@ -10,13 +10,18 @@ const NavBar = () => {
     const [categories, setCategories] = useState([])
 
     useEffect (() => {
-        getDocs(collection(database, 'categories')).then((querySnapshot) => {
+        
+    (async () => {
+        try {
+            const querySnapshot = await getDocs(collection(database, 'categories'))
             const categories = querySnapshot.docs.map( doc => {
                 return {id: doc.id, ...doc.data()}
             })
-            console.log(categories)
             setCategories(categories)
-        })
+        } catch (error) {
+        console.log('error searching categories:', error)
+        }
+    })()
     }, [])
     return (
         <nav className="nav-bar">
