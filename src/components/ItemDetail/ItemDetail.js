@@ -36,8 +36,8 @@ const ItemDetail = ({item}) => {
     return (
         <div>
             {[item].map( o =>
-                <div className='detalle-item' >
-                    <div key={o.id}><h3>{o.nombre}</h3></div>
+                <div className='detalle-item' key={o.id}>
+                    <div ><h3>{o.nombre}</h3></div>
                     <div className='contenedor-imagen-item'>
                         <img className='imagen-item' src={o.imagen} alt='product-img'/> 
                     </div>

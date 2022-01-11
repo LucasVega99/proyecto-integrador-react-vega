@@ -29,7 +29,7 @@ const NavBar = () => {
             <Link to={'/'}><h2>Flexbox Footwear</h2></Link>
             </div>
             <div>
-                {categories.map(categ => <Link key={categ.id} to={`/categoria/${categ.id}`}><Button>{categ.descripcion}</Button></Link>)}
+                {categories.map(categ => <Link key={categ.id} to={`/categoria/${categ.id}`}><Button>{categ.description}</Button></Link>)}
             </div>
             <Link to={'/cart'}><CartWidget /></Link>
         </nav>

@@ -1,7 +1,6 @@
 import {initializeApp} from 'firebase/app';
 import {getFirestore} from 'firebase/firestore';
-
-// Your web app's Firebase configuration
+import {collection, getDocs, query, where } from 'firebase/firestore'
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: "AIzaSyCMeWhMlqMhECAinPzCLycT2i4fQxrIcjI",
@@ -15,5 +14,23 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig)
 
-// esta constante servira para hacer referencia a la base de datos
 export const database = getFirestore(app)
+
+export const getProducts = (key, operator, value) => {
+  return new Promise((resolve, reject) => {
+    const collectionQuery = key && operator && value ?
+    query(collection(database, 'items'), where(key, operator, value)) :
+    collection(database, 'items')
+
+    getDocs(collectionQuery).then(querySnapshot => {
+      const products = querySnapshot.docs.map(doc =>{
+        return { id: doc.id, ...doc.data()}
+      })
+      resolve(products)
+    }).catch(err => {
+      reject('Error obteniendo productos: ', err)
+    })
+  })
+}
+
+console.log(getProducts)
